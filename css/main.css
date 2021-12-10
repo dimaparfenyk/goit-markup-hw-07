@@ -483,9 +483,6 @@ a {
 }
 
 .subscript-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 10px 29px;
   margin-left: 12px;
 }
@@ -519,11 +516,11 @@ a {
   -webkit-text-fill-color: var(--main-text-color);
 }
 
-.portfolio-section .title {
+.portfolio .title {
   display: none;
 }
 
-.portfolio-section {
+.portfolio {
   padding-top: 77px;
   padding-bottom: 94px;
 }
@@ -537,7 +534,7 @@ a {
   margin-right: 8px;
 }
 
-.filter-btn {
+.portfolio-btn {
   display: inline-block;
   text-align: center;
   padding: 6px 22px;
@@ -555,56 +552,22 @@ a {
   color: var(--primary-title-color);
 }
 
-.filter-btn:hover,
-.filter-btn:focus {
+.portfolio-btn:hover,
+.portfolio-btn:focus {
   background-color: var(--accent-color);
   color: var(--main-text-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* оформление карточек */
-.projects-list {
+.project {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 34px;
 }
 
-.project-name {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-  color: var(--primary-title-color);
-}
-
-.project-type {
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.03em;
-  color: var(--primary-text-color);
-}
-
-.company-projects:nth-child(-n + 6) {
+.project-card:nth-child(-n + 6) {
   margin-bottom: 30px;
-}
-
-.company-projects {
-  box-shadow: none;
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.company-projects:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.projects-description {
-  border: 1px solid var(--card-border-color);
-  border-top: none;
-  padding: 20px 24px;
 }
 
 /* анимация карточек портфолио */
@@ -623,12 +586,12 @@ a {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.project-thumb {
+.project-card-thumb {
   position: relative;
   overflow: hidden;
 }
 
-.project-overlay {
+.project-card-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -641,8 +604,8 @@ a {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.company-projects:hover .project-overlay,
-.company-projects:focus .project-overlay {
+.project-card:hover .project-card-overlay,
+.project-card:focus .project-card-overlay {
   transform: translateY(0%);
 }
 
@@ -703,7 +666,16 @@ a {
   pointer-events: none;
 }
 
-.modal-title-text {
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-title {
   margin-bottom: 12px;
   font-weight: bold;
   font-size: 20px;
@@ -713,23 +685,14 @@ a {
   color: #212121;
 }
 
-.modal-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-field {
-  margin-bottom: 20px;
-}
-
-.form-field {
+.label {
   display: inline-block;
   margin-bottom: 10px;
   width: 100%;
   height: 58px;
 }
 
-.input-container {
+.label-container {
   position: relative;
 }
 
@@ -749,19 +712,19 @@ a {
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-  transition-property: fill;
+  transition-property: fill, border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-input:hover + .input-icon,
-.modal-form-input:focus + .input-icon,
+.label-input:hover + .input-icon,
+.label-input:focus + .input-icon,
 .input-icon:hover,
 .input-icon:focus {
   fill: var(--accent-color);
 }
 
-.modal-form-input {
+.label-input {
   display: inline-block;
   width: 100%;
   height: 40px;
@@ -775,14 +738,14 @@ a {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-input:hover,
-.modal-form-input:focus,
-.modal-textarea:hover,
-.modal-textarea:focus {
+.label-input:hover,
+.label-input:focus,
+.label-textarea:hover,
+.label-textarea:focus {
   border-color: #2196f3;
 }
 
-.modal-textarea {
+.label-textarea {
   width: 100%;
   height: 120px;
   resize: none;
@@ -797,18 +760,15 @@ a {
 .modal-btn {
   margin: 0 auto;
   padding: 10px 55px;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.87;
 }
 
-.checkbox-form {
+.checkbox {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.check-item {
+.checkbox-item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -820,16 +780,16 @@ a {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.check-icon {
+.checkbox-icon {
   fill: #ffffff;
 }
 
-.check-input:checked + .agreement-text .check-item {
+.checkbox-input:checked + .checkbox-container .checkbox-item {
   background-color: var(--accent-color);
   border: none;
 }
 
-.agreement-text {
+.checkbox-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -839,7 +799,7 @@ a {
   color: var(--primary-text-color);
 }
 
-.agreement-doc-link {
+.checkbox-link {
   letter-spacing: 0.03em;
   text-decoration-line: underline;
   color: #2196f3;
@@ -847,6 +807,8 @@ a {
 
 .btn {
   display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 4px;
   border: none;
   min-width: 200px;
@@ -899,5 +861,38 @@ a {
   transition-property: color, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-name {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--primary-title-color);
+}
+
+.project-card-type {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+
+.project-card {
+  box-shadow: none;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.project-card-description {
+  border: 1px solid var(--card-border-color);
+  border-top: none;
+  padding: 20px 24px;
 }
 /*# sourceMappingURL=main.css.map */
