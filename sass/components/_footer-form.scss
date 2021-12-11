@@ -4,17 +4,21 @@
   align-items: center;
   width: 100%;
 }
+
 .subscript-btn {
   padding: 10px 29px;
   margin-left: 12px;
+
+  &:hover,
+  &:focus {
+    display: flex;
+  }
 }
-.subscript-btn:hover,
-.subscript-btn:focus {
-  display: flex;
-}
-.icon-send {
+
+.subscript-btn .icon-send {
   margin-left: 10px;
 }
+
 .footer-subscript-input {
   width: 358px;
   height: 50px;
@@ -31,8 +35,9 @@
   letter-spacing: 0.03em;
 
   color: var(--main-text-color);
-}
-.footer-subscript-input:-webkit-autofill {
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: var(--main-text-color);
+
+  &:-webkit-autofill {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--main-text-color);
+  }
 }

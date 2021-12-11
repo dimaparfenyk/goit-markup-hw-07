@@ -2,18 +2,23 @@
   padding-top: 0px;
   padding-bottom: 94px;
 }
+
 .production-item {
   margin-top: 50px;
 }
+
 .production-item + .production-item {
   margin-left: 30px;
 }
+
 .production-list {
   display: flex;
 }
+
 .production-item {
   position: relative;
 }
+
 .product-card-btn {
   display: block;
   text-align: center;

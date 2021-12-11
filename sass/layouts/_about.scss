@@ -1,15 +1,18 @@
 .about {
   padding: 94px 15px;
+  & > .title {
+    display: none;
+  }
 }
-.about .title {
-  display: none;
-}
+
 .about-list {
   display: flex;
 }
+
 .about-item + .about-item {
   margin-left: 30px;
 }
+
 .subtitle {
   font-weight: 700;
   font-size: 14px;
@@ -17,10 +20,14 @@
   letter-spacing: 0.03em;
   color: var(--primary-title-color);
 }
-.about-item .subtitle {
-  text-transform: uppercase;
-  margin-top: 30px;
+
+.about-item {
+  &:subtitle {
+    text-transform: uppercase;
+    margin-top: 30px;
+  }
 }
+
 .about-text {
   font-weight: 400;
   font-size: 14px;
@@ -30,6 +37,7 @@
 
   margin-top: 10px;
 }
+
 .about-box {
   display: flex;
   align-items: center;
@@ -38,6 +46,7 @@
   background-color: var(--icon-background-color);
   border-radius: 4px;
 }
+
 .about-svg {
   width: 70px;
   height: 70px;
